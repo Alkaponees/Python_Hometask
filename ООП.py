@@ -27,6 +27,7 @@ jimmy = Person('Jimmy Fellton', 46)
 john = Person('John Romero', 46)
 adam = Person('Adam Tentis', 46)
 janes = Person('Janes Katerlin', 46)
+
 print(jimmy.age)
 print(jimmy.name)
 jimmy.age = 86
@@ -39,6 +40,7 @@ person_list.append(jimmy)
 person_list.append(john)
 person_list.append(adam)
 person_list.append(janes)
+
 for person in person_list:
   jimmy.show_person_info()  
 # jimmy.show_person_info()

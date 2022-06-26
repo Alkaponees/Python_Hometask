@@ -1,5 +1,3 @@
-from tokenize import group
-
 
 class Student:
     def __init__(self, name, surname, age, birthday, city, country, group_number):
@@ -37,8 +35,8 @@ class Student:
     
     @age.setter
     def age(self, new_age):
-        if new_age <= 18 or new_age >= 120:    
-            print ("Out of range. '18-120'")
+        if new_age <= 0 or new_age >= 120:    
+            print ("Out of range. '0-120'")
         else:
             self.__age = new_age
     
