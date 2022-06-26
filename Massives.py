@@ -20,15 +20,20 @@ count_first_min=0
 count_last_min=0
 array = []
 
+
+# Функція для виведення значень
 def print_value(value):
     print(value)
 
+# Функція для заповнення першого масиву
 def fill_massive(massive, size):
     i=0
     while i < size:
         massive.append(random.randrange(-20,20))
         i+=1  
     return massive
+
+# Функція для знаходження першого від'ємного елемента
 def check_first_min(massive,size):
     
     i=0
@@ -40,6 +45,7 @@ def check_first_min(massive,size):
         i+=1  
     return  count_first_min
 
+# Функція для знаходження останнього від'ємного елемента
 def check_last_min(massive,size):
     
     count_1=count_first_min
@@ -49,34 +55,40 @@ def check_last_min(massive,size):
         count_1 +=1
     return count_last_min
 
+# Функція для заповнення другого масиву
 def fill_arrray (array):
-    
-    count_1=count_first_min
-    while count_1 < count_last_min:
-        array.append(massive[count_1]) 
-        count_1 += 1
+    i=0
+    count_2=count_first_min
+    while i < count_last_min:
+        array.append(massive[count_2]) 
+        count_2 += 1
+        i += 1
     return array
-    
+
+# Функція для роботи з масивами    
 def work_with_massive(massive,size):
 
-    fill_massive(massive , size)
-    print_value(massive)
-    count_first_min= check_first_min(massive , size)    
-    print_value(count_first_min)
+    fill_massive(massive , size) # Заповнюємо перший масив
+    print_value(massive)# Виводимо перший масив
+    # Знаходимо перший від'єиний елемент і вносимо значення у змінну 
+    count_first_min= check_first_min(massive , size)   
+    print_value(count_first_min)# Виводимо значення змінної
+    # Знаходимо останній від'єиний елемент і вносимо значення у змінну 
     count_last_min=check_last_min(massive,size)
-    print_value(count_last_min)
-    fill_arrray(array)
-    print_value(array)
-    array.sort()
-    print_value(array)
+    print_value(count_last_min)# Виводимо значення змінної
+    fill_arrray(array)# Заповнюємо другий масив
+    print_value(array)# Виводимо другий масив
+    array.sort()# Сортуємо другий масив
+    print_value(array) # Виводимо другий масив
 
-
-    
-
+# Меню програми
 def menu():
+
     print("Welcome to massive")
     size=int(input("Enter value of size of massive "))
     work_with_massive(array,size)
+
+# Викликаємо меню
 menu()
 
 
