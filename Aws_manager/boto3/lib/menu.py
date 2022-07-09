@@ -33,7 +33,8 @@ class services_menu:
                     self.__ec2.create_instance_with_attached_security_group(image,instanceType,keyName,sg_id)
                 self.__ec2.instances[0].wait_until_running()
                 print("Instance was created!!!!")
-                print(f"Public IP your instance {self.__ec2.instances[0].id} is{self.__ec2.instances[0].public_ip_address}")
+                self.__ec2.instances[0].reload()
+                print(f"Public IP your instance {self.__ec2.instances[0].id} is {self.__ec2.instances[0].public_ip_address}")
             elif choice == 6:
                 id=input("Enter id your instance... \n")
                 self.__ec2.delete_instance(id)
