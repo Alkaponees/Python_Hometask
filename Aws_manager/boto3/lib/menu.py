@@ -22,7 +22,9 @@ class services_menu:
             elif choice == 4:
                 self.__ec2.show_all_instance()
             elif choice == 5:
-                image=(input("Enter image ami(\n1.Ubuntu-ami-012ae45a4a2d92750 \n2.Amazon-ami-0917076ab9780844d)\n"))
+                image=(input(
+                    "Enter image ami(\n1.Ubuntu - ami-012ae45a4a2d92750 \n2.Amazon - ami-0917076ab9780844d)\n3.SUSE - ami-04989fe7f688013eb\n4.Debian 11 - ami-00189fd46154b0f9d\n 5.Red Hat Enterprise Linux 8 - ami-06a2a41d455060f8b\n "
+                    ))
                 instanceType=(input("Enter instance type (\nt3.micro\nt2.micro) "))
                 keyName=(input("Enter keyName (Stockholm_RSA) "))
                 choices=int(input("Do you create security group\n (1.Yes 2.No)"))
